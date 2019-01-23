@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAuthor} from '../author';
+import {IAuthor} from '../IAuthor';
 import {AuthorService} from '../author.service';
 import {AuthorListComponent} from '../author-list/author-list.component';
 

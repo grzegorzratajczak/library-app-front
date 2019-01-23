@@ -16,12 +16,12 @@ export class AuthorService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  getAuthorByFullName(fullName: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/${fullName}`);
+  getAuthorByAuthorName(authorName: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}/findbyname/${authorName}`);
   }
 
   createAuthor(author: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/create`, author);
+    return this.http.post(`${this.baseUrl}` + `/add`, author);
   }
 
   updateAuthor(id: number, value: any): Observable<Object> {
@@ -33,6 +33,6 @@ export class AuthorService {
   }
 
   getAuthorsList(): Observable<any> {
-    return this.http.get(`${this.baseUrl}` + `/all`);
+    return this.http.get(`${this.baseUrl}`);
   }
 }

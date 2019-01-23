@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {IAuthor} from '../author';
+import {IAuthor} from '../IAuthor';
 import {AuthorService} from '../author.service';
 
 @Component({

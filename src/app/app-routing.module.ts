@@ -5,10 +5,10 @@ import {AuthorCreateComponent} from './author-create/author-create.component';
 import {AuthorSearchComponent} from './author-search/author-search.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'customer', pathMatch: 'full' },
+  { path: '', redirectTo: 'authors', pathMatch: 'full' },
   { path: 'authors', component: AuthorListComponent },
-  { path: 'add', component: AuthorCreateComponent },
-  { path: 'findbyfullname', component: AuthorSearchComponent },
+  { path: 'authors/add', component: AuthorCreateComponent },
+  { path: 'authors/findbyname', component: AuthorSearchComponent },
 ];
 
 @NgModule({

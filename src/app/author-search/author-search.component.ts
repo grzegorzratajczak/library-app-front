@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {IAuthor} from '../author';
+import {IAuthor} from '../IAuthor';
 import {AuthorService} from '../author.service';
 
 @Component({
@@ -9,18 +9,18 @@ import {AuthorService} from '../author.service';
 })
 export class AuthorSearchComponent implements OnInit {
 
-  fullName: string;
+  authorName: string;
   authors: IAuthor[];
 
   constructor(private authorService: AuthorService) {
   }
 
   ngOnInit() {
-    this.fullName = '';
+    this.authorName = '';
   }
 
   private searchAuthor() {
-    this.authorService.getAuthorByFullName(this.fullName);
+    this.authorService.getAuthorByAuthorName(this.authorName);
 //      .subscribe(authors => this.authors = authors);
   }
 

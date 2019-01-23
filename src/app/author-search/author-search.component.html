@@ -2,8 +2,8 @@
 <div style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="fullName">fullName</label>
-      <input type="text" class="form-control" id="fullName" required [(ngModel)]="fullName" name="fullName">
+      <label for="authorName">Author Full Name</label>
+      <input type="text" class="form-control" id="authorName" required [(ngModel)]="authorName" name="authorName">
     </div>
 
     <div class="btn-group">
@@ -13,6 +13,6 @@
 </div>
 <ul>
   <li *ngFor="let author of authors">
-    <h4>{{author.id}} - {{author.fullName}}</h4>
+    <h4>{{author.id}} - {{author.authorName}}</h4>
   </li>
 </ul>

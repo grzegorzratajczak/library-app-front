@@ -2,8 +2,8 @@
 <div [hidden]="submitted" style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="fullName">Full Name</label>
-      <input type="text" class="form-control" id="fullName" required [(ngModel)]="author.fullName" name="fullName">
+      <label for="authorName">Author Full Name</label>
+      <input type="text" class="form-control" id="authorName" required [(ngModel)]="author.authorName" name="authorName">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>
@@ -12,5 +12,5 @@
 
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
-  <button class="btn btn-success" (click)="newAuthor()">Add</button>
+  <button class="btn btn-success" (click)="newAuthor()">Add Author</button>
 </div>
