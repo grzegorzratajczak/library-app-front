@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {IAuthor} from '../IAuthor';
+import {Author} from '../Author';
 import {AuthorService} from '../author.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-author-search',
@@ -10,7 +11,7 @@ import {AuthorService} from '../author.service';
 export class AuthorSearchComponent implements OnInit {
 
   authorName: string;
-  authors: IAuthor[];
+  authors: Observable<Object>;
 
   constructor(private authorService: AuthorService) {
   }
@@ -20,8 +21,7 @@ export class AuthorSearchComponent implements OnInit {
   }
 
   private searchAuthor() {
-    this.authorService.getAuthorByAuthorName(this.authorName);
-//      .subscribe(authors => this.authors = authors);
+    this.authors = this.authorService.getAuthorByAuthorName(this.authorName);
   }
 
   onSubmit() {

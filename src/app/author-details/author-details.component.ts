@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IAuthor} from '../IAuthor';
+import {Author} from '../Author';
 import {AuthorService} from '../author.service';
 import {AuthorListComponent} from '../author-list/author-list.component';
 
@@ -10,9 +10,10 @@ import {AuthorListComponent} from '../author-list/author-list.component';
 })
 export class AuthorDetailsComponent implements OnInit {
 
-  @Input() author: IAuthor;
+  @Input() author: Author;
 
-  constructor(private authorService: AuthorService, private listComponent: AuthorListComponent) { }
+  constructor(private authorService: AuthorService, private authorListComponent: AuthorListComponent) {
+  }
 
   ngOnInit() {
   }
@@ -22,9 +23,20 @@ export class AuthorDetailsComponent implements OnInit {
       .subscribe(
         data => {
           console.log(data);
-          this.listComponent.reloadData();
+          this.authorListComponent.reloadData();
         },
         error => console.log(error));
+  }
+
+  getBooksByAuthor() {
+    this.authorService.getAuthor(this.author.id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.authorListComponent.reloadData();
+        },
+        error => console.log(error)
+      );
   }
 
 }

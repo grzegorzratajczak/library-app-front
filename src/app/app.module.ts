@@ -9,6 +9,10 @@ import { AuthorCreateComponent } from './author-create/author-create.component';
 import { AuthorDetailsComponent } from './author-details/author-details.component';
 import { AuthorListComponent } from './author-list/author-list.component';
 import { AuthorSearchComponent } from './author-search/author-search.component';
+import { BookListComponent } from './book-list/book-list.component';
+import { CopyListComponent } from './copy-list/copy-list.component';
+import { LoanListComponent } from './loan-list/loan-list.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { AuthorSearchComponent } from './author-search/author-search.component';
     AuthorCreateComponent,
     AuthorDetailsComponent,
     AuthorListComponent,
-    AuthorSearchComponent
+    AuthorSearchComponent,
+    BookListComponent,
+    CopyListComponent,
+    LoanListComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,

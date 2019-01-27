@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
-import {IAuthor} from '../IAuthor';
+import {Author} from '../Author';
 import {AuthorService} from '../author.service';
 
 @Component({
@@ -10,7 +10,7 @@ import {AuthorService} from '../author.service';
 })
 export class AuthorListComponent implements OnInit {
 
-  authors: Observable<IAuthor>;
+  authors: Observable<Author>;
 
   constructor(private authorService: AuthorService) {
   }

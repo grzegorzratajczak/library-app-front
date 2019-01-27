@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {IAuthor} from '../IAuthor';
+import {Author} from '../Author';
 import {AuthorService} from '../author.service';
-import {IBook} from '../IBook';
 
 @Component({
   selector: 'app-author-create',
@@ -10,36 +9,24 @@ import {IBook} from '../IBook';
 })
 export class AuthorCreateComponent implements OnInit {
 
-  author: IAuthor = new class implements IAuthor {
-    authorName: string;
-    books: IBook[];
-    id: number;
-  };
+  author: Author;
   submitted = false;
 
   constructor(private authorService: AuthorService) {
   }
 
   ngOnInit() {
+    this.newAuthor();
   }
 
   newAuthor(): void {
     this.submitted = false;
-    this.author = new class implements IAuthor {
-      authorName: string;
-      books: IBook[];
-      id: number;
-    };
+    this.author = new Author();
   }
 
   save() {
     this.authorService.createAuthor(this.author)
       .subscribe(data => console.log(data), error => console.log(error));
-    this.author = new class implements IAuthor {
-      authorName: string;
-      books: IBook[];
-      id: number;
-    };
   }
 
   onSubmit() {

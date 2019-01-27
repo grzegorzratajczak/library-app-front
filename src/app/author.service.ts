@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Author} from './Author';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,12 @@ export class AuthorService {
     return this.http.get(`${this.baseUrl}/${id}`);
   }
 
-  getAuthorByAuthorName(authorName: string): Observable<any> {
-    return this.http.get(`${this.baseUrl}/findbyname/${authorName}`);
+  getAuthorByAuthorName(authorName: string): Observable<Object> {
+    return this.http.get(`${this.baseUrl}` + `ByAuthorName/${authorName}`);
   }
 
-  createAuthor(author: Object): Observable<Object> {
-    return this.http.post(`${this.baseUrl}` + `/add`, author);
+  createAuthor(author: Author): Observable<any> {
+    return this.http.post(`${this.baseUrl}`, author);
   }
 
   updateAuthor(id: number, value: any): Observable<Object> {
