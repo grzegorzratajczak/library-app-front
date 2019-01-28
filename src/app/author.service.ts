@@ -1,17 +1,19 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Author} from './Author';
+import {AuthorDto} from './AuthorDto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorService {
 
-  private baseUrl = 'http://localhost:8080/authors';
-
   constructor(private http: HttpClient) {
   }
+
+  private baseUrl = 'http://localhost:8080/authors';
+
+  authorDto: AuthorDto;
 
   getAuthor(id: number): Observable<Object> {
     return this.http.get(`${this.baseUrl}/${id}`);
@@ -20,9 +22,9 @@ export class AuthorService {
   getAuthorByAuthorName(authorName: string): Observable<Object> {
     return this.http.get(`${this.baseUrl}` + `ByAuthorName/${authorName}`);
   }
-
-  createAuthor(author: Author): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, author);
+  createAuthor(authorName: string): Observable<any> {
+    this.authorDto.authorName = authorName;
+    return this.http.post(`${this.baseUrl}`, this.authorDto);
   }
 
   updateAuthor(id: number, value: any): Observable<Object> {

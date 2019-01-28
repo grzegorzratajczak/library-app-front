@@ -13,6 +13,7 @@ import { BookListComponent } from './book-list/book-list.component';
 import { CopyListComponent } from './copy-list/copy-list.component';
 import { LoanListComponent } from './loan-list/loan-list.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
+import { CopyDetailsComponent } from './copy-details/copy-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BookDetailsComponent } from './book-details/book-details.component';
     BookListComponent,
     CopyListComponent,
     LoanListComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    CopyDetailsComponent
   ],
   imports: [
     BrowserModule,

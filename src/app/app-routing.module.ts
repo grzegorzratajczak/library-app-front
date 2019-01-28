@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'authorsCreate', component: AuthorCreateComponent },
   { path: 'authorsSearch', component: AuthorSearchComponent },
   { path: 'books', component: BookListComponent },
-  { path: 'copys', component: CopyListComponent },
+  { path: 'copies', component: CopyListComponent },
   { path: 'loans', component: LoanListComponent },
 ];
 

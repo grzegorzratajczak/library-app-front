@@ -1,11 +1,10 @@
 <div *ngIf="book">
   <div>
     <label>Title: </label> {{book.bookName}}
-    <label>Author: </label> {{book.author.authorName}}
   </div>
 
   <span class="button is-small" (click)='getCopys()'>Kopie</span>
-  <span class="button is-small btn-danger" (click)='deleteCopy()'>Delete</span>
+  <span class="button is-small btn-danger" (click)='deleteBook()'>Delete</span>
 
   <hr/>
 </div>

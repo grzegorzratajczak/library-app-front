@@ -22,7 +22,12 @@ export class BookDetailsComponent implements OnInit {
 
   }
 
-  deleteCopy() {
-
+  deleteBook() {
+    this.bookService.deleteBook(this.book.id)
+      .subscribe(data => {
+          console.log(data);
+          this.bookListComponent.reloadData();
+        },
+        error => console.log(error));
   }
 }

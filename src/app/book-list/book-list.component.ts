@@ -19,7 +19,7 @@ export class BookListComponent implements OnInit {
     this.reloadData();
   }
 
-  private reloadData() {
+  reloadData() {
     this.books = this.bookService.getBooksList();
   }
 }

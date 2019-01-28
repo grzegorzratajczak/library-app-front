@@ -1,16 +1,13 @@
 <h3>Create Author</h3>
-<div [hidden]="submitted" style="width: 300px;">
+<div style="width: 300px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="authorName">Author Full Name</label>
-      <input type="text" class="form-control" id="authorName" required [(ngModel)]="author.authorName" name="authorName">
+      <input type="text" class="form-control" id="authorName" required [(ngModel)]="authorName" name="authorName">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
 
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-  <button class="btn btn-success" (click)="onSubmit()">Add Author</button>
-</div>
+

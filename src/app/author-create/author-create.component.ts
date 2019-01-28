@@ -1,5 +1,4 @@
-import {Component, OnInit} from '@angular/core';
-import {Author} from '../Author';
+import {Component, OnInit, Output} from '@angular/core';
 import {AuthorService} from '../author.service';
 
 @Component({
@@ -9,28 +8,20 @@ import {AuthorService} from '../author.service';
 })
 export class AuthorCreateComponent implements OnInit {
 
-  author: Author;
-  submitted = false;
+  @Output() authorName: string;
 
   constructor(private authorService: AuthorService) {
   }
 
   ngOnInit() {
-    this.newAuthor();
-  }
-
-  newAuthor(): void {
-    this.submitted = false;
-    this.author = new Author();
   }
 
   save() {
-    this.authorService.createAuthor(this.author)
+    this.authorService.createAuthor(this.authorName)
       .subscribe(data => console.log(data), error => console.log(error));
   }
 
   onSubmit() {
-    this.submitted = true;
     this.save();
   }
 }

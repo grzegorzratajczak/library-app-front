@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Copy} from '../Copy';
+import {CopyService} from '../copy.service';
 
 @Component({
   selector: 'app-copy-list',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CopyListComponent implements OnInit {
 
-  constructor() { }
+  copies: Observable<Copy>;
 
-  ngOnInit() {
+  constructor(private copyService: CopyService) {
   }
 
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  reloadData() {
+    this.copies = this.copyService.getCopiesList();
+  }
 }

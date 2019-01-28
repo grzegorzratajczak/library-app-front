@@ -15,4 +15,8 @@ export class BookService {
   getBooksList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
+
+  deleteBook(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, {responseType: 'text'});
+  }
 }

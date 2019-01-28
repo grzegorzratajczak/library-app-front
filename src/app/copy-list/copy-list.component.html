@@ -1,3 +1,5 @@
-<p>
-  copy-list works!
-</p>
+<h1>Copies</h1>
+
+<div *ngFor="let copy of copies | async" style="width: 300px;">
+  <app-copy-details [copy]="copy"></app-copy-details>
+</div>
