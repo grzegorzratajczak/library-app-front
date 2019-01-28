@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Observable} from 'rxjs';
+import {Loan} from '../Loan';
+import {LoanService} from '../loan.service';
 
 @Component({
   selector: 'app-loan-list',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoanListComponent implements OnInit {
 
-  constructor() { }
+  loans: Observable<Loan>;
 
-  ngOnInit() {
+  constructor(private loanService: LoanService) {
   }
 
+  ngOnInit() {
+    this.reloadData();
+  }
+
+  private reloadData() {
+    this.loans = this.loanService.getLoansList();
+  }
 }

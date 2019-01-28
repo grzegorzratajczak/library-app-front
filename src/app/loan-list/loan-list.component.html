@@ -1,3 +1,5 @@
-<p>
-  loan-list works!
-</p>
+<h1>Loans</h1>
+
+<div *ngFor="let loan of loans | async" style="width: 300px;">
+  <app-loan-details [loan]="loan"></app-loan-details>
+</div>

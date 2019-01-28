@@ -1,0 +1,14 @@
+<div *ngIf="loan">
+  <div>
+    <label>Tytuł książki: </label> {{loan.bookName}}
+    <label>Id kopi: </label> {{loan.copyId}}
+    <label>Id czytelnika: </label> {{loan.readerId}}
+    <label>Od dnia: </label> {{loan.fromDate}}
+    <label>Do dnia: </label> {{loan.toDate}}
+  </div>
+
+  <span class="button is-small" (click)='endLoan()'>Oddaj</span>
+  <span class="button is-small btn-danger" (click)='deleteLoan()'>Usuń</span>
+
+  <hr/>
+</div>
